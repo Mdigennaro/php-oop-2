@@ -1,13 +1,23 @@
 <?php
 
 require_once __DIR__."/classes/Product.php";
+require_once __DIR__."/classes/User.php";
 
 $new_product = new Product("Giubbotto", "MDG");
 $new_product -> setPrice(200);
 $new_product -> setSize("XXL");
-$new_product -> setDiscount(20);
 
-var_dump($new_product)
+var_dump($new_product);
+
+$new_user = new User("Michele", "Di Gennaro");
+$new_user -> setEmail("michele.digennaro@gmail.com");
+$new_user -> setPhoneNumber("+39 01234567890");
+$new_user -> setDiscount(0);
+
+
+var_dump($new_user);
+
+
 
 ?>
 
@@ -24,21 +34,35 @@ var_dump($new_product)
 
 <h1>BOOLAZON</h1>
 
-<h2> <?php echo $new_product -> getName() ?> </h2>
+<div>
+  <h2>Prodotto</h2>
 
-<h3> <?php echo $new_product -> getBrand() ?> </h3>
+  <h2>Nome: <?php echo $new_product -> getName() ?> </h2>
+  
+  <h3>Marca: <?php echo $new_product -> getBrand() ?> </h3>
+  
+  <h5>Taglia: <?php echo $new_product -> getSize() ?> </h5>
+  
+  <p>
+    Prezzo: <?php echo $new_product -> getPrice() ?> € 
+  </p> 
+</div>
 
-<h5> <?php echo $new_product -> getSize() ?> </h5>
+<div>
+  <h2>Dati acquirente</h2>
 
-<p>
-  Prezzo: <?php echo $new_product -> getPrice() ?> €  
-</p>
-<p>
-  Sconto: <?php echo $new_product -> getDiscount() ?> %  
-</p>
-<p>
-  Prezzo finale: <?php echo $new_product -> getFinalPrice() ?> €
-  </p>
+  <h2>Nome: <?php echo $new_user -> getFirstName() ?> <?php echo $new_user -> getLastName() ?></h2>
+  
+  <h3>E-mail: <?php echo $new_user -> getEmail() ?> </h3>
+  
+  <h5>Numero di telefono: <?php echo $new_user -> getPhoneNumber() ?> </h5>
+  
+  <p>
+    Prezzo: <?php  ?> € 
+  </p> 
+</div>
+
+
   
 </body>
 </html>

@@ -6,7 +6,6 @@ class Product{
   private $brand;
   private $size;
   private $price;
-  private $discount = 0;
 
   public function __construct($_name, $_brand)
   {
@@ -30,10 +29,6 @@ class Product{
     $this -> price = $_price;
   }
 
-  public function setDiscount($_discount){
-    $this -> discount = $_discount;
-  }
-
   public function getName(){
     return $this -> name;
   }
@@ -49,17 +44,6 @@ class Product{
   public function getPrice(){
     return $this -> price;
   }
-
-  public function getDiscount(){
-    return $this -> discount;
-  }
-
-  public function getFinalPrice(){
-    $finalPrice = $this -> price - (($this -> price * $this -> discount) / 100);
-
-    return number_format($finalPrice, 2, ",", "");
-  }
-
 
 }
 
