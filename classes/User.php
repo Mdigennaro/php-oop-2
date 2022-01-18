@@ -5,7 +5,7 @@ class User {
   private $lastname;
   private $email;
   private $phoneNumber;
-  private $priceProduct;
+  private $productBuy;
   private $discount = 0;
 
   function __construct($_firstname, $_lastname)
@@ -30,8 +30,8 @@ class User {
     $this -> phoneNumber = $_phoneNumber;
   }
 
-  public function setPriceProduct($_priceProduct){
-    $this -> priceProduct = $_priceProduct;
+  public function setproductBuy($_productBuy){
+    $this -> productBuy = $_productBuy;
   }
   
   public function setDiscount($_discount){
@@ -56,6 +56,18 @@ class User {
 
   public function getDiscount(){
     return $this -> discount;
+  }
+
+  public function hasProductBuy($_product){
+    $this -> productBuy = $_product;
+  }
+
+  public function getDiscountPrice(){
+    $starterPrice = $this -> productBuy -> getPrice();
+
+    $discountPrice = $starterPrice - (($starterPrice * $this -> discount) / 100);
+
+    return number_format($discountPrice, 2, ",","");
   }
 
 }

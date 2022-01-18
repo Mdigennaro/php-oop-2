@@ -12,7 +12,8 @@ var_dump($new_product);
 $new_user = new User("Michele", "Di Gennaro");
 $new_user -> setEmail("michele.digennaro@gmail.com");
 $new_user -> setPhoneNumber("+39 01234567890");
-$new_user -> setDiscount(0);
+$new_user -> setDiscount(30);
+$new_user -> hasProductBuy($new_product);
 
 
 var_dump($new_user);
@@ -35,33 +36,45 @@ var_dump($new_user);
 <h1>BOOLAZON</h1>
 
 <div>
-  <h2>Prodotto</h2>
+  <h2>Dati Utente</h2>
 
+  <h2>Nome: <?php echo $new_user -> getFirstName() ?> <?php echo $new_user -> getLastName() ?></h2>
+
+  <h3>E-mail: <?php echo $new_user -> getEmail() ?> </h3>
+
+  <h5>Numero di telefono: <?php echo $new_user -> getPhoneNumber() ?> </h5>
+
+</div>
+
+<div>
+  <h2>Carrello</h2>
+  
   <h2>Nome: <?php echo $new_product -> getName() ?> </h2>
   
   <h3>Marca: <?php echo $new_product -> getBrand() ?> </h3>
   
   <h5>Taglia: <?php echo $new_product -> getSize() ?> </h5>
-  
+
   <p>
     Prezzo: <?php echo $new_product -> getPrice() ?> € 
   </p> 
+  
+  
 </div>
 
 <div>
-  <h2>Dati acquirente</h2>
 
-  <h2>Nome: <?php echo $new_user -> getFirstName() ?> <?php echo $new_user -> getLastName() ?></h2>
-  
-  <h3>E-mail: <?php echo $new_user -> getEmail() ?> </h3>
-  
-  <h5>Numero di telefono: <?php echo $new_user -> getPhoneNumber() ?> </h5>
-  
+  <h2>Totale acquisti</h2>
+
   <p>
-    Prezzo: <?php  ?> € 
-  </p> 
-</div>
+    Hai lo sconto del <?php echo $new_user -> getDiscount() ?> %
+  </p>
 
+  <p>
+    Prezzo: <?php echo $new_user -> getDiscountPrice() ?> € 
+  </p> 
+
+</div>
 
   
 </body>
