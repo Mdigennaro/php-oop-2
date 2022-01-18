@@ -1,5 +1,11 @@
 <?php
 
+require_once __DIR__."/classes/Product.php";
+
+$new_product = new Product("Giubbotto", "MDG");
+
+var_dump($new_product)
+
 ?>
 
 
