@@ -6,7 +6,7 @@ class User {
   private $email;
   private $phoneNumber;
   private $productBuy;
-  private $discount = 0;
+  protected $discount = 0;
 
   function __construct($_firstname, $_lastname)
   {
