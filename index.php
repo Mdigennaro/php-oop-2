@@ -3,6 +3,7 @@
 require_once __DIR__."/classes/Product.php";
 require_once __DIR__."/classes/User.php";
 require_once __DIR__."/classes/GoldUser.php";
+require_once __DIR__."/classes/CreditCard.php";
 
 $new_product = new Product("Giubbotto", "MDG");
 $new_product -> setPrice(200);
@@ -23,9 +24,11 @@ $new_goldUser -> setEmail("giovannimuciaccia@gmail.com");
 $new_goldUser -> setPhoneNumber("+39 0987654321");
 $new_goldUser -> hasProductBuy($new_product);
 
+var_dump($new_goldUser);
 
-var_dump($new_goldUser)
+$new_card = new CreditCard(345245755763, "Michele", "Di Gennaro", 2, 2024, 123);
 
+var_dump($new_card);
 
 ?>
 
