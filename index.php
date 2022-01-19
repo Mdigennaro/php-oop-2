@@ -26,7 +26,13 @@ $new_goldUser -> hasProductBuy($new_product);
 
 var_dump($new_goldUser);
 
-$new_card = new CreditCard(345245755763, "Michele", "Di Gennaro", 2, 2024, 123);
+try {
+
+  $new_card = new CreditCard(345375934, "Michele", "Di Gennaro", 01, 2022, 123);
+
+} catch (\Exception $e) {
+  echo "Eccezione:". $e -> getMessage();
+}
 
 var_dump($new_card);
 
